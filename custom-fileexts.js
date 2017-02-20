@@ -27,10 +27,8 @@ plugin.updateMime = function(){
     var mimeArray = [];
     mimeSettings.get().input.forEach(function(args){
       if(args.length > 1){
-        var firstArg = args[0];
-        args.shift();
         mimeArray.push({
-          mime: firstArg,
+          mime: args.shift(),
           extensionArray: args
         });
       }
