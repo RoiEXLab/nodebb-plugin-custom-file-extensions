@@ -1,0 +1,12 @@
+{
+    "url": "https://github.com/RoiEXLab/nodebb-plugin-custom-file-extensions#readme",
+    "library": "./custom-fileexts.js",
+    "hooks": [
+        { "hook": "static:app.load", "method": "init" },
+        { "hook": "filter:admin.header.build", "method": "addAdminNav" }
+    ],
+    "acpScripts": [
+        "admin.js"
+    ],
+    "templates": "templates"
+}
