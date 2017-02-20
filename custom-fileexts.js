@@ -6,7 +6,7 @@ var controllers = require("./controllers");
 var winston = module.parent.require("winston");
 var Settings = module.parent.require('./settings');
 var SocketAdmin = module.parent.require("./socket.io/admin");
-var mimeSettings = new Settings("custom-fileexts", "0.2.0", {input: []}, function(){});
+var mimeSettings = new Settings("custom-fileexts", "0.2.1", {input: []}, function(){});
 
 
 plugin.init = function(params, callback){
