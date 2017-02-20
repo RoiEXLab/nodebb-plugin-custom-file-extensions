@@ -2,13 +2,11 @@
 
 var plugin = {};
 var mime = module.parent.require("mime");
-var db = module.parent.require("./database");
 var controllers = require("./controllers");
 var winston = module.parent.require("winston");
-var meta = module.parent.require("./meta");
-var async = module.parent.require("async");
 var Settings = module.parent.require('./settings');
 var SocketAdmin = module.parent.require("./socket.io/admin");
+var mimeSettings = new Settings("custom-fileexts", "0.2.0", {input: []}, function(){});
 
 
 plugin.init = function(params, callback){
@@ -17,47 +15,35 @@ plugin.init = function(params, callback){
   var hostControllers = params.controllers;
   router.get('/admin/plugins/custom-fileexts', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
   router.get('/api/admin/plugins/custom-fileexts', controllers.renderAdminPage);
-  var mimeSettings = new Settings("custom-fileexts", "0.1.0", plugin.getMimeFormObject(), function(){});
   SocketAdmin.settings.syncMimeTypes = function(){
     mimeSettings.sync();
-    plugin.updateMime(mimeSettings.get().input);
+    plugin.updateMime();
   };
-  plugin.addMimeTypes(params);
+  plugin.updateMime();
   callback();
 }
 
-plugin.updateMime = function(input){
+plugin.updateMime = function(){
     var mimeArray = [];
-    input.forEach(function(args){
+    mimeSettings.get().input.forEach(function(args){
       if(args.length > 1){
+        var firstArg = args[0];
+        args.shift();
         mimeArray.push({
-          mime: args[0],
-          extensionArray: args.shift()
+          mime: firstArg,
+          extensionArray: args
         });
       }
     });
-    db.setAdd("nodebb-plugin-custom-file-extensions:extension-list", mimeArray);
-    plugin.addMimeTypes();
+    plugin.addMimeTypes(mimeArray);
 }
 
-plugin.getMimeFormObject = function(){
-  var array = [];
-  db.getSetMembers("nodebb-plugin-custom-file-extensions:extension-list", function(err, array){
-    array.forEach(function(object){
-      array.push([object.mime, object.extensionArray]);
-    });
-  });
-  return {input: array};
-}
-
-plugin.addMimeTypes = function(params){
-  db.getSetMembers("nodebb-plugin-custom-file-extensions:extension-list", function(err, array){
+plugin.addMimeTypes = function(mimeArray){
     var customMimeTypes = {};
-    array.forEach(function(object){
+    mimeArray.forEach(function(object){
       customMimeTypes[object.mime] = object.extensionArray;
     });
     mime.define(customMimeTypes);
-  });
 }
 
 plugin.addAdminNav = function(header, callback){

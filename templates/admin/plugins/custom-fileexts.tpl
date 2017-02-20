@@ -1,5 +1,5 @@
 <div class="row">
-  Add a space seperated list of custom Fileextensions you want your nodebb not to rename into .bin<br>
+  Add a list of custom Fileextensions you want your nodebb not to rename into .bin<br>
   Example: <pre><code>application/custom-format cf custform</code></pre> will rename every fileextension sent as application/custom-format into file.cf
 </div>
 <form role="form" id="custom-fileexts-settings">
