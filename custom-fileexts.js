@@ -17,7 +17,7 @@ plugin.init = function(params, callback){
   var hostControllers = params.controllers;
   router.get('/admin/plugins/custom-fileexts', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
   router.get('/api/admin/plugins/custom-fileexts', controllers.renderAdminPage);
-  var mimeSettings = new Settings("custom-fileexts", "0.0.1", plugin.getMimeFormObject(), function(){});
+  var mimeSettings = new Settings("custom-fileexts", "0.1.0", plugin.getMimeFormObject(), function(){});
   SocketAdmin.settings.syncMimeTypes = function(){
     mimeSettings.sync();
     plugin.updateMime(mimeSettings.get().input);
