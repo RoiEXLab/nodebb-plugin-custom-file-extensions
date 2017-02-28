@@ -4,9 +4,7 @@
 </div>
 <form role="form" id="custom-fileexts-settings">
 	<div class="row">
-    <div class="col-sm-12">
-      <div data-key="input" data-split="<br>" data-attributes='{"data-type":"array","data-attributes":{"type":"textarea"}}' data-new='["", ""]'>
-      </div>
+		<div data-key="input" data-split="<br>" data-attributes='{"data-type":"array","data-attributes":{"type":"textarea"}}' data-new='["", ""]'>
 		</div>
 	</div>
 </form>
