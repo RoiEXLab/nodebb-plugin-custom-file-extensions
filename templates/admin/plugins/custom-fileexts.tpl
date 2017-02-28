@@ -1,6 +1,9 @@
 <div class="row">
-  Add a list of custom Fileextensions you want your nodebb not to rename into .bin<br>
-  Example: <pre><code>application/custom-format cf custform</code></pre> will rename every fileextension sent as application/custom-format into file.cf
+	<div class="col-sm-12">
+		Add a list of custom file-extensions you want your nodebb not to rename into .bin or .undefined<br>
+		Example: <pre><code>application/custom-format cf custform</code></pre> will rename every file-extension sent as application/custom-format into file.cf
+		Please note: You can add as many extensions as you like to a single mime type, but at least one is required!
+	</div>
 </div>
 <form role="form" id="custom-fileexts-settings">
 	<div class="row">
