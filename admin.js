@@ -8,9 +8,11 @@ define("admin/plugins/custom-fileexts", ['settings'], function(settings){
       updateRemoveButtons();
     }
     function updateRemoveButtons(){
-      var remButtons = $("div[data-parent=_input] > button.remove");
-      remButtons.each(function(index){
-        this.disabled = index === 0 || (index === 1 && remButtons.length <= 2);
+      $("div[data-parent=_input]").each(function(index){
+        var remButtons = $(this).find("button.remove");
+        remButtons.each(function(index){
+          this.disabled = index === 0 || (index === 1 && remButtons.length <= 2);
+        });
       });
     }
     function updatePlaceholders(){
