@@ -1,9 +1,9 @@
 {
   "name": "nodebb-plugin-custom-file-extensions",
-  "version": "0.2.2-beta",
-  "description": "BETA Version, use with caution! A plugin allowing you to upload custom files with out them being renamed",
+  "version": "0.3.0-beta",
+  "description": "BETA Version! A plugin allowing you to upload custom files with out them being renamed",
   "nbbpm": {
-    "compatibility": "^1.4.3"
+    "compatibility": "^1.4.4"
   },
   "keywords" : [
     "nodebb",
@@ -13,5 +13,13 @@
   "dependencies": {
     "mime": "^1.3.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/RoiEXLab/nodebb-plugin-custom-file-extensions#readme",
+  "bugs": {
+    "url": "https://github.com/RoiEXLab/nodebb-plugin-custom-file-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RoiEXLab/nodebb-plugin-custom-file-extensions.git"
+  }
 }
