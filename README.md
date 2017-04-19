@@ -2,5 +2,5 @@
 # nodebb-plugin-custom-file-extensions
 This plugin allows nodebb users to enable custom file type uploads
 
-##Notice
+## Notice
 This Project is no longer maintained due to changes to NodeBB core which make this plugin obsolete.
