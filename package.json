@@ -1,9 +1,9 @@
 {
   "name": "nodebb-plugin-custom-file-extensions",
-  "version": "0.3.1-beta",
+  "version": "0.3.2-beta",
   "description": "BETA Version! A plugin allowing you to upload custom files with out them being renamed",
   "nbbpm": {
-    "compatibility": "^1.4.4"
+    "compatibility": "1.4.4|1.4.5"
   },
   "keywords" : [
     "nodebb",
