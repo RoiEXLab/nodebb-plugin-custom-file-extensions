@@ -1,7 +1,7 @@
 {
   "name": "nodebb-plugin-custom-file-extensions",
-  "version": "0.3.3-beta",
-  "description": "BETA Version! A plugin allowing you to upload custom files with out them being renamed",
+  "version": "0.3.4-beta",
+  "description": "Obsolete! NodeBB Core changed its handling of files. This used to be a plugin allowing you to upload custom files with out them being renamed. You can still use it, but I won't affect anything.",
   "nbbpm": {
     "compatibility": "1.4.4||1.4.5"
   },
